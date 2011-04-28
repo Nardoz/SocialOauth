@@ -1,1 +1,8 @@
 commands.pyc
+samples-and-tests/.classpath
+samples-and-tests/.project
+samples-and-tests/.settings/
+samples-and-tests/eclipse/
+samples-and-tests/conf/oauth.properties
+samples-and-tests/tmp/
+

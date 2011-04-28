@@ -1,0 +1,13 @@
+#{extends 'main.html' /}
+#{set title:'Connected Services' /}
+
+<div> 
+  <label>Linked Accounts:</label>
+  <label>
+    #{list items:serviceNames, as:'serviceName'}
+      ${serviceName}${serviceName_isLast ? '' : ', '}
+    #{/list}
+  </label>
+</div>
+
+<p>#{a @Application.index()}Home#{/a}</p>

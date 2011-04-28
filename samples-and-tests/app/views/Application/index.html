@@ -1,0 +1,19 @@
+#{extends 'main.html' /}
+#{set title:'Social OAuth Sample Application: Home' /}
+
+<p>Welcome to the sample app for Social OAuth</p>
+<p>You can connect this application to various social apps (like Twitter, Facebook, Foursquare, etc.).</p>
+
+<form method="get" action="@{oauth.Authentication.authenticate()}">
+  <label>Sign in using</label>
+  <input type="hidden" name="callback" value="${redirectUrl}">
+  <select type="text" name="serviceName">
+    #{list items:serviceNames, as:'serviceName'}
+      %{ 
+        messageKey = 'SERVICES.' + serviceName;
+      }%
+      <option value="${serviceName}">&{messageKey}</option>
+    #{/list}
+  </select>
+  <input type="submit" value="SignIn" title="SignIn" />
+</form>

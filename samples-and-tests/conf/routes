@@ -1,0 +1,18 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                                       Application.index
+GET     /signout                                Application.signout
+GET		/showAdd                                Application.showAdd
+GET		/accounts/link							oauth.Authentication.authenticate
+#GET		/accounts/link/{serviceName}            oauth.Authentication.authenticate(callback:'/')
+*       /accounts/oauthcallback                 oauth.Authentication.oauthCallback
+
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                staticDir:public
+
+# Catch all
+#*       /{controller}/{action}                  {controller}.{action}
